@@ -9,29 +9,29 @@ var curyear = d.getFullYear();
 function getMonth(startDateStr) {
     switch (startDateStr.substr(5,2)) {
     case '01':
-        return "January ";
+        return "Januar ";
     case '02':
-        return "February ";
+        return "Februar ";
     case '03':
-        return "March ";
+        return "März ";
     case '04':
         return "April ";
     case '05':
-        return "May ";
+        return "Mai ";
     case '06':
-        return "June ";
+        return "Juni ";
     case '07':
-        return "July ";
+        return "Juli ";
     case '08':
         return "August ";
     case '09':
         return "September ";
     case '10':
-        return "October ";
+        return "Oktober ";
     case '11':
         return "November ";
     case '12':
-        return "December ";
+        return "Dezember ";
     }
 }
 
@@ -115,7 +115,7 @@ function render(resumeObject) {
                 w.endDateYear = (w.endDate || "").substr(0,4);
                 w.endDateMonth = getMonth(w.endDate || "");
             } else {
-                w.endDateYear = 'Present'
+                w.endDateYear = 'Bis Heute'
             }
             if (w.highlights) {
                 if (w.highlights[0]) {
@@ -139,7 +139,7 @@ function render(resumeObject) {
                 w.endDateYear = (w.endDate || "").substr(0,4);
                 w.endDateMonth = getMonth(w.endDate || "");
             } else {
-                w.endDateYear = 'Present'
+                w.endDateYear = 'Bis Heute'
             }
             if (w.highlights) {
                 if (w.highlights[0]) {
@@ -177,10 +177,10 @@ function render(resumeObject) {
                     e.endDateMonth = getMonth(e.endDate || "")
 
                     if (e.endDateYear > curyear) {
-                        e.endDateYear += " (expected)";
+                        e.endDateYear += " (vorraussichtlich)";
                     }
                 } else {
-                    e.endDateYear = 'Present'
+                    e.endDateYear = 'Bis Heute'
                     e.endDateMonth = '';
                 }
                 if (e.courses) {
